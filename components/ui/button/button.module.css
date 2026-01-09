@@ -1,0 +1,42 @@
+.base {
+  width: 340px;
+  height: 40px;
+  border: transparent;
+  border-radius: 4px;
+  padding: 10px 20px;
+
+  font-family: var(--font-montserrat);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+
+  color: #1f2128;
+}
+
+.base:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.base:focus-visible {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Variants */
+
+.primary {
+  background-color: #ffce22;
+}
+
+.primary:hover {
+  opacity: 0.9;
+}
+
+.secondary {
+  background-color: #ffd84d;
+}
+
+.secondary:hover {
+  opacity: 0.9;
+}
