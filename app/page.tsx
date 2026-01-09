@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button/button";
+import { Card } from "@/components/ui/card/card";
 import { Checkbox } from "@/components/ui/checkbox/checkbox";
 import styles from "./page.module.css";
 
@@ -15,8 +16,59 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        style={{
+          marginTop: "2rem",
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+        }}
+      >
+        <h2 style={{ marginBottom: "1rem" }}>Page Selection List</h2>
+
+        <Card>
+          <span className="text">All pages</span>
+          <Checkbox className="checkbox-sm" />
+        </Card>
+
+        <Card>
+          <span className="text">All pages</span>
+          <Checkbox variant="lightGray" defaultChecked />
+        </Card>
+
+        <Card>
+          <span className="text">All pages</span>
+          <Checkbox variant="mediumGray" defaultChecked focused className="checkbox-sm" />
+        </Card>
+
+        <Card>
+          <span className="text">All pages</span>
+          <Checkbox variant="blue" defaultChecked />
+        </Card>
+
+        <Card>
+          <span className="text">All pages</span>
+          <Checkbox variant="darkBlue" defaultChecked />
+        </Card>
+
+        <Card>
+          <span className="text">All pages</span>
+          <Checkbox variant="blue" defaultChecked />
+        </Card>
+
+        <Card>
+          <span className="text">All pages</span>
+          <Checkbox variant="darkBlue" defaultChecked />
+        </Card>
+
+        <Card>
+          <span className="text">All pages</span>
+          <Checkbox variant="lightGray" defaultChecked />
+        </Card>
+      </section>
+
       <section style={{ marginTop: "2rem" }}>
-        <h2 style={{ marginBottom: "1rem" }}>Pixel Perfect Checkboxes</h2>
+        <h2 style={{ marginBottom: "1rem" }}>All Checkbox States</h2>
         <div
           style={{
             display: "flex",
