@@ -63,41 +63,57 @@ export default function Home() {
       </section> */}
 
       <section style={{ marginTop: "2rem" }}>
-        <h2 style={{ marginBottom: "1rem" }}>All Checkbox States</h2>
+        <h2 style={{ marginBottom: "1rem" }}>Checkbox Verification (8 States)</h2>
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "10px",
+            gap: "20px",
             padding: "20px",
+            background: "#f9fafb",
+            borderRadius: "8px",
+            border: "1px solid #e5e7eb",
           }}
         >
-          {/* 1. Default unchecked */}
-          <Checkbox />
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <Checkbox id="state-1" />
+            <span>1. Unchecked</span>
+          </div>
 
-          {/* 2. Default checked */}
-          <Checkbox defaultChecked disabled />
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <Checkbox id="state-2" />
+            <span>2. Unchecked (Hover me)</span>
+          </div>
 
-          {/* 3. Default checked + focus (keyboard) */}
-          <Checkbox defaultChecked autoFocus />
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <Checkbox id="state-3" />
+            <span>3. Unchecked (Focus me via Tab)</span>
+          </div>
 
-          {/* 4. Primary checked */}
-          <Checkbox variant="primary" defaultChecked />
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <Checkbox id="state-4" defaultChecked />
+            <span>4. Checked (Hover me)</span>
+          </div>
 
-          {/* 5. Primary checked (hover simulated via wrapper class if needed) */}
-          <Checkbox variant="primary" defaultChecked />
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <Checkbox id="state-5" defaultChecked />
+            <span>5. Checked</span>
+          </div>
 
-          {/* 6. Primary checked + active (mousedown – visual only) */}
-          <Checkbox variant="primary" defaultChecked />
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <Checkbox id="state-7" defaultChecked />
+            <span>7. Checked (Focus me via Tab)</span>
+          </div>
 
-          {/* 7. Primary checked + disabled */}
-          <Checkbox variant="primary" defaultChecked disabled />
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <Checkbox id="state-8-checked" defaultChecked disabled />
+            <span>8. Disabled (Checked)</span>
+          </div>
 
-          {/* 8. Default checked + disabled */}
-          <Checkbox defaultChecked disabled />
-
-          {/* 9. Default unchecked + disabled */}
-          <Checkbox disabled />
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <Checkbox id="state-8-unchecked" disabled />
+            <span>8. Disabled (Unchecked)</span>
+          </div>
         </div>
       </section>
     </main>

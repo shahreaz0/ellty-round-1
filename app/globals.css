@@ -28,14 +28,3 @@ body {
   font-size: 14px;
   color: #1f2128;
 }
-
-.checkbox-sm {
-  width: 23px;
-  height: 23px;
-}
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */

@@ -1,33 +1,18 @@
-import { cva, type VariantProps } from "class-variance-authority";
 import type { ComponentProps } from "react";
 import styles from "./checkbox.module.css";
 
-const checkboxVariants = cva(styles.box, {
-  variants: {
-    variant: {
-      default: styles.default,
-      primary: styles.primary,
-    },
-  },
-  defaultVariants: {
-    variant: "default",
-  },
-});
-
 function Checkbox({
   className,
-  variant,
   label,
   ref,
   ...props
-}: ComponentProps<"input"> &
-  VariantProps<typeof checkboxVariants> & {
-    label?: string;
-  }) {
+}: ComponentProps<"input"> & {
+  label?: string;
+}) {
   return (
-    <label className={styles.base}>
+    <label className={`${styles.base} ${props.disabled ? styles.disabled : ""}`}>
       <input type="checkbox" className={styles.input} ref={ref} {...props} />
-      <div className={checkboxVariants({ variant, className })}>
+      <div className={styles.box}>
         <svg
           width="18"
           height="13"

@@ -24,73 +24,79 @@
   width: 25px;
   height: 25px;
   border-radius: 6px;
-  border: 1px solid #bdbdbd;
+  border: 1px solid #cdcdcd;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+  color: transparent; /* Default checkmark color transparent */
 }
 
 .checkmark {
-  opacity: 0;
-  stroke-width: 1.5;
+  stroke-width: 1;
   stroke: currentColor;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease, color 0.15s ease;
 }
 
-/* Checked */
-.input:checked + .box .checkmark {
-  opacity: 1;
+/* 1. Unchecked (Default) - Handled by .box base styles */
+
+/* 2. Unchecked Hovered: border stays, show faint checkmark */
+.input:not(:checked):not(:disabled) + .box:hover {
+  border-color: #d1d1d1;
 }
 
-/* Focus */
-.input:focus-visible + .box {
-  box-shadow: 0 0 0 3px rgba(36, 105, 246, 0.25);
+.input:not(:checked):not(:disabled) + .box:hover .checkmark {
+  color: #e5e7eb;
 }
 
-/* ---------- Default ---------- */
-
-.default {
-  color: #c1c1c1;
+/* 3. Unchecked Focused: glow */
+.input:not(:checked):focus-visible + .box {
+  border-color: #bdbdbd;
+  box-shadow: 0 0 0 4px rgba(36, 105, 246, 0.1);
 }
 
-.input:not(:disabled) + .box.default:hover {
-  border-color: #b1b1b1;
+.input:not(:checked):focus-visible + .box .checkmark {
+  color: #878787;
 }
 
-/* ---------- Primary ---------- */
-
-.primary {
+/* 5. Checked: solid Blue */
+.input:checked + .box {
+  background: #2469f6;
+  border-color: #2469f6;
   color: #fff;
 }
 
-/* Hover (unchecked) */
-.input:not(:checked):not(:disabled) + .box.primary:hover {
-  border-color: #2469f6;
-}
-
-/* Checked (ACTIVE primary) */
-.input:checked + .box.primary {
-  background: #2469f6;
-  border-color: #2469f6;
-}
-
-/* ---------- Disabled ---------- */
-
-.input:disabled + .box {
-  border-color: #e0e0e0;
-}
-
-/* Disabled + checked (muted blue) */
-.input:disabled:checked + .box.primary {
+/* 4. Checked and Hovered: Lighter Blue */
+.input:checked:not(:disabled) + .box:hover {
   background: #5087f8;
   border-color: #5087f8;
 }
 
-.input:disabled + .box .checkmark {
+/* 7. Checked and Focused: Solid Blue + glow */
+.input:checked:focus-visible + .box {
+  background: #2469f6;
+  border-color: #2469f6;
+  box-shadow: 0 0 0 4px rgba(36, 105, 246, 0.1);
+}
+
+/* 8. Disabled */
+.input:disabled + .box {
+  border-color: #bdbdbd;
+  background: #fff;
+  cursor: not-allowed;
+}
+
+.input:disabled:checked + .box {
+  background: #fff;
+  border-color: #bdbdbd;
   color: #e3e3e3;
+}
+
+.input:disabled:not(:checked) + .box {
+  background: #fff;
+  border-color: #bdbdbd;
 }
 
 /* Label */
