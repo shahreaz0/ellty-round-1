@@ -16,7 +16,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
+      {/* <section
         style={{
           marginTop: "2rem",
           display: "flex",
@@ -29,11 +29,6 @@ export default function Home() {
         <Card>
           <span className="text">All pages</span>
           <Checkbox className="checkbox-sm" />
-        </Card>
-
-        <Card>
-          <span className="text">All pages</span>
-          <Checkbox variant="lightGray" defaultChecked />
         </Card>
 
         <Card>
@@ -65,7 +60,7 @@ export default function Home() {
           <span className="text">All pages</span>
           <Checkbox variant="lightGray" defaultChecked />
         </Card>
-      </section>
+      </section> */}
 
       <section style={{ marginTop: "2rem" }}>
         <h2 style={{ marginBottom: "1rem" }}>All Checkbox States</h2>
@@ -77,15 +72,32 @@ export default function Home() {
             padding: "20px",
           }}
         >
+          {/* 1. Default unchecked */}
           <Checkbox />
-          <Checkbox variant="lightGray" defaultChecked />
-          <Checkbox variant="mediumGray" defaultChecked focused />
-          <Checkbox variant="blue" defaultChecked />
-          <Checkbox variant="darkBlue" defaultChecked />
-          <Checkbox variant="blue" defaultChecked />
-          <Checkbox variant="darkBlue" defaultChecked focused />
-          <Checkbox variant="lightGray" defaultChecked />
-          <Checkbox />
+
+          {/* 2. Default checked */}
+          <Checkbox defaultChecked disabled />
+
+          {/* 3. Default checked + focus (keyboard) */}
+          <Checkbox defaultChecked autoFocus />
+
+          {/* 4. Primary checked */}
+          <Checkbox variant="primary" defaultChecked />
+
+          {/* 5. Primary checked (hover simulated via wrapper class if needed) */}
+          <Checkbox variant="primary" defaultChecked />
+
+          {/* 6. Primary checked + active (mousedown – visual only) */}
+          <Checkbox variant="primary" defaultChecked />
+
+          {/* 7. Primary checked + disabled */}
+          <Checkbox variant="primary" defaultChecked disabled />
+
+          {/* 8. Default checked + disabled */}
+          <Checkbox defaultChecked disabled />
+
+          {/* 9. Default unchecked + disabled */}
+          <Checkbox disabled />
         </div>
       </section>
     </main>

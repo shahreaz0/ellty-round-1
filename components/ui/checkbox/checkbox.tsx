@@ -6,26 +6,17 @@ const checkboxVariants = cva(styles.box, {
   variants: {
     variant: {
       default: styles.default,
-      blue: styles.blue,
-      darkBlue: styles.darkBlue,
-      lightGray: styles.lightGray,
-      mediumGray: styles.mediumGray,
-    },
-    focused: {
-      true: styles.focused,
-      false: "",
+      primary: styles.primary,
     },
   },
   defaultVariants: {
     variant: "default",
-    focused: false,
   },
 });
 
 function Checkbox({
   className,
   variant,
-  focused,
   label,
   ref,
   ...props
@@ -36,7 +27,7 @@ function Checkbox({
   return (
     <label className={styles.base}>
       <input type="checkbox" className={styles.input} ref={ref} {...props} />
-      <div className={checkboxVariants({ variant, focused, className })}>
+      <div className={checkboxVariants({ variant, className })}>
         <svg
           width="18"
           height="13"

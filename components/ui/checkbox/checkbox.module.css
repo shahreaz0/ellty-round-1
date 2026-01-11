@@ -7,98 +7,94 @@
   position: relative;
 }
 
+.base.disabled {
+  cursor: not-allowed;
+}
+
+/* Hide native checkbox properly */
 .input {
   position: absolute;
   opacity: 0;
-  cursor: pointer;
-  height: 0;
   width: 0;
+  height: 0;
+  margin: 0;
 }
 
 .box {
   width: 25px;
   height: 25px;
   border-radius: 6px;
-  transition: all 0.2s ease;
+  border: 1px solid #bdbdbd;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #bdbdbd;
-  background-color: #fff;
   flex-shrink: 0;
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .checkmark {
   opacity: 0;
-  transition: opacity 0.2s ease;
+  stroke-width: 1.5;
   stroke: currentColor;
+  transition: opacity 0.15s ease;
 }
 
+/* Checked */
 .input:checked + .box .checkmark {
   opacity: 1;
 }
 
-/* Variants */
+/* Focus */
+.input:focus-visible + .box {
+  box-shadow: 0 0 0 3px rgba(36, 105, 246, 0.25);
+}
+
+/* ---------- Default ---------- */
 
 .default {
-  border-color: #d1d1d1;
   color: #c1c1c1;
 }
 
-.default:hover {
+.input:not(:disabled) + .box.default:hover {
   border-color: #b1b1b1;
 }
 
-.blue {
-  border-color: #d1d1d1;
+/* ---------- Primary ---------- */
+
+.primary {
   color: #fff;
 }
 
-.input:checked + .box.blue {
-  background-color: #5087f8;
-  border-color: #5087f8;
-}
-
-.blue:hover {
-  border-color: #5087f8;
-}
-
-.darkBlue {
-  border-color: #d1d1d1;
-  color: #fff;
-}
-
-.input:checked + .box.darkBlue {
-  background-color: #2469f6;
+/* Hover (unchecked) */
+.input:not(:checked):not(:disabled) + .box.primary:hover {
   border-color: #2469f6;
 }
 
-.darkBlue:hover {
+/* Checked (ACTIVE primary) */
+.input:checked + .box.primary {
+  background: #2469f6;
   border-color: #2469f6;
 }
 
-.lightGray {
-  border-color: #d1d1d1;
+/* ---------- Disabled ---------- */
+
+.input:disabled + .box {
+  border-color: #e0e0e0;
+}
+
+/* Disabled + checked (muted blue) */
+.input:disabled:checked + .box.primary {
+  background: #5087f8;
+  border-color: #5087f8;
+}
+
+.input:disabled + .box .checkmark {
   color: #e3e3e3;
 }
 
-.mediumGray {
-  border-color: #e3e3e3;
-  color: #878787;
-}
-
-.input:focus-visible + .box {
-  box-shadow: 0 0 0 3px rgba(75, 137, 255, 0.2);
-  border-color: #4b89ff;
-}
-
-.box.focused {
-  box-shadow: 0 0 0 4px rgba(75, 137, 255, 0.2);
-  /* border-color: #4b89ff; */
-}
-
+/* Label */
 .label {
-  font-family: var(--font-montserrat);
   font-size: 14px;
   color: #1f2128;
 }
