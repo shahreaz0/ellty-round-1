@@ -1,5 +1,5 @@
 :root {
-  --background: #eee;
+  --background: #fff;
   --foreground: #171717;
 }
 
@@ -27,4 +27,8 @@ body {
   font-family: var(--font-montserrat);
   font-size: 14px;
   color: #1f2128;
+  font-weight: 400;
+  font-style: Regular;
+  line-height: 130%;
+  letter-spacing: 0px;
 }

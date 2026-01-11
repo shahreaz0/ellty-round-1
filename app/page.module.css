@@ -1,9 +1,8 @@
-.page {
+.main {
   min-height: 100vh;
   font-family: var(--font-montserrat);
   background-color: var(--background);
-}
-
-.title {
-  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
