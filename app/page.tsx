@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button/button";
-import { Card } from "@/components/ui/card/card";
 import { Checkbox } from "@/components/ui/checkbox/checkbox";
 import styles from "./page.module.css";
 
@@ -12,7 +11,6 @@ export default function Home() {
         <h2 style={{ marginBottom: "1rem" }}>Buttons</h2>
         <div style={{ display: "flex", gap: "10px" }}>
           <Button>Done</Button>
-          <Button variant="secondary">Done</Button>
         </div>
       </section>
 
