@@ -4,13 +4,24 @@ import styles from "./checkbox.module.css";
 function Checkbox({
   className,
   label,
+  labelPosition = "right",
   ref,
   ...props
 }: ComponentProps<"input"> & {
   label?: string;
+  labelPosition?: "left" | "right";
 }) {
+  const baseClasses = [
+    styles.base,
+    labelPosition === "left" ? styles.labelLeft : "",
+    props.disabled ? styles.disabled : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <label className={`${styles.base} ${props.disabled ? styles.disabled : ""}`}>
+    <label className={baseClasses}>
       <input type="checkbox" className={styles.input} ref={ref} {...props} />
       <div className={styles.box}>
         <svg

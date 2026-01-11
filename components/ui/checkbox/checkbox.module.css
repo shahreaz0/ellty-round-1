@@ -5,6 +5,12 @@
   cursor: pointer;
   user-select: none;
   position: relative;
+  width: 100%; /* Default to full width for parent hover support */
+}
+
+.base.labelLeft {
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
 .base.disabled {
@@ -43,11 +49,12 @@
 /* 1. Unchecked (Default) - Handled by .box base styles */
 
 /* 2. Unchecked Hovered: border stays, show faint checkmark */
-.input:not(:checked):not(:disabled) + .box:hover {
+/* Triggered when the label (.base) is hovered */
+.base:hover .input:not(:checked):not(:disabled) + .box {
   border-color: #d1d1d1;
 }
 
-.input:not(:checked):not(:disabled) + .box:hover .checkmark {
+.base:hover .input:not(:checked):not(:disabled) + .box .checkmark {
   color: #e5e7eb;
 }
 
@@ -69,7 +76,8 @@
 }
 
 /* 4. Checked and Hovered: Lighter Blue */
-.input:checked:not(:disabled) + .box:hover {
+/* Triggered when the label (.base) is hovered */
+.base:hover .input:checked:not(:disabled) + .box {
   background: #5087f8;
   border-color: #5087f8;
 }

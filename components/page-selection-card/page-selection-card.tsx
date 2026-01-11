@@ -16,7 +16,7 @@ export function PageSelectionCard() {
         <div className={styles.divider} />
       </div>
       <div className={styles.footer}>
-        <Button className={styles.button}>Done</Button>
+        <Button>Done</Button>
       </div>
     </section>
   );
