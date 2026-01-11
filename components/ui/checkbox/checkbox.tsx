@@ -5,11 +5,13 @@ function Checkbox({
   className,
   label,
   labelPosition = "right",
+  size = "md",
   ref,
   ...props
-}: ComponentProps<"input"> & {
+}: Omit<ComponentProps<"input">, "size"> & {
   label?: string;
   labelPosition?: "left" | "right";
+  size?: "sm" | "md";
 }) {
   const baseClasses = [
     styles.base,
@@ -20,10 +22,14 @@ function Checkbox({
     .filter(Boolean)
     .join(" ");
 
+  const boxClasses = [styles.box, size === "sm" ? styles.sizeSm : styles.sizeMd]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <label className={baseClasses}>
       <input type="checkbox" className={styles.input} ref={ref} {...props} />
-      <div className={styles.box}>
+      <div className={boxClasses}>
         <svg
           width="18"
           height="13"

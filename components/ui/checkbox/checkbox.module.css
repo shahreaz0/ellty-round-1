@@ -27,8 +27,6 @@
 }
 
 .box {
-  width: 25px;
-  height: 25px;
   border-radius: 6px;
   border: 1px solid #cdcdcd;
   background: #fff;
@@ -38,6 +36,16 @@
   flex-shrink: 0;
   transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
   color: transparent; /* Default checkmark color transparent */
+}
+
+.box.sizeMd {
+  width: 25px;
+  height: 25px;
+}
+
+.box.sizeSm {
+  width: 23px;
+  height: 23px;
 }
 
 .checkmark {
