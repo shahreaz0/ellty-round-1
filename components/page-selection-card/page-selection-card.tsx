@@ -11,9 +11,9 @@ export function PageSelectionCard() {
 
   const isAllSelected = selectedPages.length === PAGES.length;
 
-  const handleSelectAll = (checked: boolean) => {
+  function handleSelectAll(checked: boolean) {
     setSelectedPages(checked ? [...PAGES] : []);
-  };
+  }
 
   function handleSelectPage(page: string, checked: boolean) {
     setSelectedPages((prev) =>
